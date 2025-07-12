@@ -10,6 +10,13 @@
   <url>http://maven.apache.org</url>
   <dependencies>
   </dependencies>
+  <distributionManagement>
+    <repository>
+      <id>github</id>
+      <name>GitHub Packages</name>
+      <url>https://maven.pkg.github.com/sonawaneu777/string-utils</url>
+    </repository>
+  </distributionManagement>
 </project>
 
 
