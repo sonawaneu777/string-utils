@@ -1,0 +1,27 @@
+deploy:
+  if: github.ref == 'refs/heads/main'
+  runs-on: ubuntu-latest
+  needs: build
+
+  steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '17'
+        cache: maven
+
+    - name: Generate Version from Commit SHA
+      id: version
+      run: echo "VERSION=1.0.0-${GITHUB_SHA::7}" >> $GITHUB_ENV
+
+    - name: Set version in pom.xml
+      run: mvn versions:set -DnewVersion=$VERSION
+
+    - name: Deploy to GitHub Packages
+      run: mvn deploy --settings .github/settings.xml
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
