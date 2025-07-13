@@ -16,6 +16,7 @@ public class StringUtils {
      * Checks if a string is a palindrome.
      * Ignores case and non-alphanumeric characters.
      * Example: "A man, a plan, a canal, Panama" → true
+     * Sample
      */
     public static boolean isPalindrome(String input) {
 	System.out.println("input string as :"+input);
