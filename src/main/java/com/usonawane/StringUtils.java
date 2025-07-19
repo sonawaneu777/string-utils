@@ -12,6 +12,32 @@ public class StringUtils {
         return input.substring(0, 1).toUpperCase() + input.substring(1);
     }
 
+
+	public static String nitinFunction(String input) {
+        System.out.println("Program is start: ");
+		System.out.println("Input string: " + input);
+
+        if (input == null || input.isEmpty()) return input;
+
+        StringBuilder result = new StringBuilder();
+        boolean capitalizeNext = true;
+
+        for (char ch : input.toCharArray()) {
+            if (Character.isWhitespace(ch)) {
+                result.append(ch);
+                capitalizeNext = true;
+            } else if (capitalizeNext && Character.isLetter(ch)) {
+                result.append(Character.toUpperCase(ch));
+                capitalizeNext = false;
+            } else {
+                result.append(ch);
+                capitalizeNext = false;
+            }
+        }
+
+        return result.toString();
+    }
+
     /**
      * Checks if a string is a palindrome.
      * Ignores case and non-alphanumeric characters.
