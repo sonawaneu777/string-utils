@@ -7,9 +7,10 @@ public class StringUtils {
      * Example: "hello" → "Hello"
      */
     public static String capitalize(String input) {
+	System.out.println("Hello Program starts);
 	System.out.println("input string as :"+input);
         if (input == null || input.isEmpty()) return input;
-        return input.substring(0, 1).toUpperCase() + input.substring(1);
+        return String upper = input.toUpperCase();
     }
 
 
@@ -51,3 +52,4 @@ public class StringUtils {
         return clean.equals(new StringBuilder(clean).reverse().toString());
     }
 }
+
