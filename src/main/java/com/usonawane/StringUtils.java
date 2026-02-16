@@ -4,7 +4,7 @@ public class StringUtils {
 
     /**
      * Capitalizes the first character of the string.
-     * Example: "hello" → "Hello" || Use Utils also.
+     * Example: "hello" → "Hello"
      */
 	public static String capitalize(String input) {
     System.out.println("Hello Program starts---");
@@ -57,7 +57,6 @@ public class StringUtils {
         return clean.equals(new StringBuilder(clean).reverse().toString());
     }
 }
-
 
 
 
