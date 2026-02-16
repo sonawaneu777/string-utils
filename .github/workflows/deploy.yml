@@ -1,4 +1,4 @@
-name: Build and Deploy Library
+name: Build and Deploy Libraryy
 
 on:
   push:
